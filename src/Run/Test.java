@@ -1,29 +1,17 @@
 package Run;
-import java.io.IOException;
 
 import Card.Deck;
-import Player.Player;
-import Tools.CsvTool;
+import Player.Human;
 
 public class Test {
 	public static void main(String[] args) {
 		Deck d = new Deck();
-		d.shuffle();
-		System.out.println(d);
-		
-		Player p = new Player();
-		p.getCardFromDeck(d);
-		p.getCardFromDeck(d);
-		System.out.println(p);
-		System.out.println(p.getScore());
-		p.modifyAsValue();
-		System.out.println(p.getScore());
-		
-//		try {
-//			CsvTool csv = new CsvTool();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		d.shuffleRecursive(0);
+		for (int i = 0; i < d.size; i++) {
+			System.out.println(d.deck[i]);
+		}
+//		Human p = new Human("drsneezy");
+//		System.out.println(d.pickCard());
+//		p.getCardFromDeck(d);
 	}
 }

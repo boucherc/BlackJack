@@ -27,6 +27,18 @@ public class Deck {
 			deck[i] = tmp;
 		}
 	}
+	
+	public void shuffleRecursive(int idx) {
+		int random;
+		Card tmp;
+		random=(int) (Math.random() * size);
+		tmp = deck[random];
+		deck[random] = deck[idx];
+		deck[idx] = tmp;
+		idx++;
+		if(idx<size) shuffleRecursive(idx);
+		
+	}
 
 	public Card pickCard() {
 		Card res;
